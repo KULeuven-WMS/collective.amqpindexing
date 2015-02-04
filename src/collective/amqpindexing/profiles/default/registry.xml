@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<registry>
+  <records interface="collective.amqpindexing.browser.interfaces.IIndexingSettings" />
+
+  <record name="collective.amqpindexing.browser.interfaces.IIndexingSettings.indexedContentTypes">
+        <value purge="False">
+          <element>File</element>
+          <element>Image</element>
+          <element>News Item</element>
+          <element>Event</element>
+          <element>Document</element>
+          <element>Person</element>
+          <element>KULPerson</element>
+        </value>
+  </record>
+
+</registry>

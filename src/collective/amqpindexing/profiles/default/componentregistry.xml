@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<componentregistry>
+ <adapters/>
+ <utilities>
+  <utility
+     interface="collective.indexing.interfaces.IIndexQueueProcessor"
+     name="amqp"
+     factory="collective.amqpindexing.processor.AMQPIndexProcessor"/>
+ </utilities>
+</componentregistry>

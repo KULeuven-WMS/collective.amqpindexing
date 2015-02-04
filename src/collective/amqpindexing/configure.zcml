@@ -1,0 +1,53 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:cmf="http://namespaces.zope.org/cmf"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:passmgr="http://affinitic.be/passmgr"
+    xmlns:grok="http://namespaces.zope.org/grok"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="collective.amqpindexing">
+
+    <include package="grokcore.component" file="meta.zcml" />
+    <include package="z3c.schema2json"/>
+    <include package="Products.CMFCore" />
+
+    <!-- Zope2 initialization -->
+    <five:registerPackage package="." initialize=".initialize" />
+
+    <!-- Include sub-packages that use their own configure.zcml files. -->
+    <include package=".browser" />
+    <include package="collective.zamqp"/>
+    <include package="collective.indexing"/>
+    <include package="affinitic.pwmanager"/>
+
+    <passmgr:pwdfile
+       name="rabbit"
+       required="True"
+       filename="rabbitpass"/>
+
+    <grok:grok package=".metadata"/>
+    <grok:grok package=".connection"/>
+    <grok:grok package=".publisher"/>
+
+
+    <!-- Register the installation GenericSetup extension profile -->
+    <genericsetup:registerProfile
+        name="default"
+        title="collective.amqpindexing"
+        directory="profiles/default"
+        description="Extension profile for collective.amqpindexing."
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+
+    <genericsetup:registerProfile
+        name="uninstall"
+        title="collective.amqpindexing: uninstall"
+        directory="profiles/uninstall"
+        description="Uninstall profile for collective.amqpindexing."
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+
+    <i18n:registerTranslations directory="locales" />
+
+</configure>

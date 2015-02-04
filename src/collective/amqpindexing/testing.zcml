@@ -1,0 +1,31 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:grok="http://namespaces.zope.org/grok"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="collective.amqpindexing">
+
+
+    <include file="configure.zcml" />
+    <grok:grok package=".testing"/>
+    <interface
+      interface=".testing.ITestMetadata"
+      type="collective.amqpindexing.interfaces.IMetadata"/>
+
+  <!-- Register the installation GenericSetup extension profile -->
+  <genericsetup:registerProfile
+      name="testing"
+      title="collective.amqpindexing test"
+      directory="profiles/testing"
+      description="collective.amqpindexing desc"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+  <genericsetup:importStep
+      name="collective.amqpindexing.tests_content"
+      title="collective.amqpindexing test"
+      description="Various import steps that are not handled by GS import/export handlers."
+      handler=".setuphandlers.testSetup">
+  </genericsetup:importStep>
+
+</configure>
