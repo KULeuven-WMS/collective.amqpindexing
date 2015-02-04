@@ -1,0 +1,10 @@
+name: collective_amqpindexing
+root: /code
+pre: rm -f ~/.vim/sessions/*.lock
+windows:
+  - editor:
+      layout: 6c7f,213x56,0,0[213x39,0,0,0,213x16,0,40{106x16,0,40,1,106x16,107,40,2}]
+      panes:
+        - touch ~/.vim/sessions/collective_amqpindexing.vim && vim -n -S ~/.vim/sessions/collective_amqpindexing.vim
+        - watchmedo tricks-from .tricks.yaml
+        - svn up && ctags parts/omelette

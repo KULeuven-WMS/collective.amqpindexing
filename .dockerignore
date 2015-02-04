@@ -1,0 +1,10 @@
+tmp
+.git
+.svn
+Makefile
+fig.yml
+var
+.*egg-info
+docker-compose.yml
+tags
+pass

@@ -10,3 +10,5 @@ var
 *.pyc
 *.egg-info
 tags
+Dockerfile
+devel

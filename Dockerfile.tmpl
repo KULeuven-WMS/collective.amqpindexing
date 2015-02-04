@@ -1,0 +1,19 @@
+FROM jfroche/docker-plone:4.3
+
+USER root
+
+# Create plone
+RUN userdel plone
+RUN groupadd -fg $GROUPID plone
+RUN useradd -m -d /code -s /bin/zsh -u $USERID -g $GROUPID plone
+
+RUN apt-get update && apt-get install -y rabbitmq-server unzip libpq-dev libsqlite-dev subversion libaio1 libldap2-dev libsasl2-dev tmux silversearcher-ag zsh exuberant-ctags parallel python-setuptools firefox
+RUN pip install watchdog pyflakes pep8 flake8 pylint zest.releaser pyroma check-manifest git+https://github.com/yejianye/watchdog-tricks.git
+RUN gem install tmuxinator
+RUN mkdir -p /code/.ssh
+RUN echo "Host github.com\n\tStrictHostKeyChecking no\n" >> /code/.ssh/config
+RUN echo "Host bitbucket.org\n\tStrictHostKeyChecking no\n" >> /code/.ssh/config
+ADD . /code/
+RUN chown -R plone /code
+USER plone
+RUN bin/buildout -N -vvv

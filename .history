@@ -1,0 +1,57 @@
+: 1423047139:0;bin/test -s collective.amqpindexing -t test_contenttype_indexing
+: 1423047514:0;\
+
+: 1423047518:0;bin/test -s collective.amqpindexing -t test_contenttype_indexing
+: 1423047927:0;top
+: 1423047960:0;bin/test -s collective.amqpindexing -t test_contenttype_indexing
+: 1423049457:0;exit
+: 1423049525:0;bin/test -s collective.amqpindexing -t test_contenttype_indexing
+: 1423050308:0;\
+
+: 1423050312:0;bin/test -s collective.amqpindexing -t test_contenttype_indexing
+: 1423050442:0;git branch
+: 1423050447:0;git remote -v
+: 1423053986:0;bin/test -s collective.amqpindexing -t test_reindex_all
+: 1423055737:0;\
+
+: 1423055738:0;bin/test -s collective.amqpindexing -t test_reindex_all
+: 1423056160:0;\
+
+: 1423056166:0;bin/test -s collective.amqpindexing -t test_reindex_all
+: 1423056467:0;\
+
+: 1423056476:0;bin/test -s collective.amqpindexing -t test_reindex_all
+: 1423061402:0;\
+
+: 1423061406:0;bin/test -s collective.amqpindexing -t test_reindex_all
+: 1423062570:0;bin/test -s collective.amqpindexing -t test_disable_indexing_form
+: 1423062678:0;bin/test -s collective.amqpindexing -t test_disabled_indexing
+: 1423062785:0;bin/test -t test_contenttype_indexing
+: 1423062805:0;bin/test -s collective.amqpindexing -t test_contenttype_indexing
+: 1423062949:0;bin/test -s collective.amqpindexing -m test_metadata
+: 1423064075:0;ls
+: 1423064077:0;cd devel
+: 1423064077:0;ls
+: 1423064086:0;cd collective.amqpindexing
+: 1423064090:0;cat ~/.gitco
+: 1423066515:0;touch ~/.vim/sessions/kuleuvenindexing.vim && vim -n -S ~/.vim/sessions/kuleuvenindexing.vim
+: 1423066516:0;watchmedo tricks-from .tricks.yaml
+: 1423066534:0;touch ~/.vim/sessions/kuleuvenindexing.vim && vim -n -S ~/.vim/sessions/kuleuvenindexing.vim
+: 1423066550:0;watchmedo tricks-from .tricks.yaml
+: 1423066550:0;touch ~/.vim/sessions/kuleuvenindexing.vim && vim -n -S ~/.vim/sessions/kuleuvenindexing.vim
+: 1423066550:0;svn up && ctags parts/omelette
+: 1423066601:0;watchmedo tricks-from .tricks.yaml
+: 1423066601:0;touch ~/.vim/sessions/collective_amqpindexing.vim && vim -n -S ~/.vim/sessions/collective_amqpindexing.vim
+: 1423066609:0;bin/test
+: 1423066757:0;touch ~/.vim/sessions/collective_amqpindexing.vim && vim -n -S ~/.vim/sessions/collective_amqpindexing.vim
+: 1423066757:0;watchmedo tricks-from .tricks.yaml
+: 1423066757:0;svn up && ctags parts/omelette
+: 1423066899:0;bin/test
+: 1423067234:0;svn up && ctags parts/omelette
+: 1423067234:0;watchmedo tricks-from .tricks.yaml
+: 1423067239:0;bin/test
+: 1423067258:0;ls pass
+: 1423067286:0;touch ~/.vim/sessions/collective_amqpindexing.vim && vim -n -S ~/.vim/sessions/collective_amqpindexing.vim
+: 1423067286:0;watchmedo tricks-from .tricks.yaml
+: 1423067286:0;svn up && ctags parts/omelette
+: 1423067291:0;bin/test

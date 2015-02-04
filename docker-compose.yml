@@ -1,0 +1,48 @@
+web:
+  image: kuleuven/collective.amqpindexing
+  command: mux start package
+  environment:
+    - SHELL=/usr/bin/zsh
+    - LC_ALL=en_US.UTF-8
+    - LANG=en_US.UTF-8
+    - FLAKE8_IGNORE=E501
+    - TERM=xterm-256color
+    - CLIENT_HOME=/code
+    - PASSWORD_DIR=/code/pass
+    - DISPLAY
+  ports:
+    - "8080:8080"
+  links:
+    - amqp
+  volumes:
+    - .ctags:/code/.ctags
+    - .flake8:/code/.config/flake8
+    - .history:/code/.history
+    - .pylintrc:/code/.pylintrc
+    - .tmuxinator:/code/.tmuxinator
+    - .tricks.yaml:/code/.tricks.yaml
+    - ~/.subversion:/code/.subversion
+    - /dev/log:/dev/log
+    - /etc/tmux.conf:/etc/tmux.conf
+    - buildout.cfg:/code/buildout.cfg
+    - devel:/code/devel
+    - docs:/code/docs
+    - pass:/code/pass
+    - setup.py:/code/setup.py
+    - ~/.oh-my-zsh:/code/.oh-my-zsh
+    - ~/.pypirc:/code/.pypirc
+    - ~/.tmp:/code/.tmp
+    - ~/.tmux.conf:/code/.tmux.conf
+    - ~/.vim:/code/.vim
+    - ~/.vimrc:/code/.vimrc
+    - ~/.zsh:/code/.zsh
+    - ~/.zshrc:/code/.zshrc
+    - src/:/code/src
+    - /tmp/.X11-unix:/tmp/.X11-unix
+amqp:
+  image: tutum/rabbitmq
+  ports:
+    - "5672:5672"
+    - "15672:15672"
+  environment:
+    RABBITMQ_PASS: indexing
