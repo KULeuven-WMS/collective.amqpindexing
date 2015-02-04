@@ -35,6 +35,11 @@ setup(
     install_requires=[
         'Plone',
         'setuptools',
+        'z3c.schema2json',
+        'grokcore.component',
+        'collective.zamqp',
+        'collective.indexing',
+        'affinitic.pwmanager'
     ],
     extras_require={
         'test': [
