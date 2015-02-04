@@ -3,13 +3,6 @@
            i18n_domain="collective">
 
   <browser:page
-     for="*"
-     name="push_metadata"
-     class=".metadata.PushMetadata"
-     permission="zope.Public"
-     />
-
-  <browser:page
      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
      name="indexing-settings-controlpanel"
      class=".settings.IndexingSettings"
